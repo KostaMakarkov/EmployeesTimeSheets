@@ -1,0 +1,42 @@
+@if(reportsSignal().length > 0){
+<div class="reports-container p-3">
+  <h3>Submitted Reports</h3>
+  <ul class="p-0">
+    @for (report of reportsSignal(); track report._id) {
+    <li class="d-flex justify-content-between">
+      <div class="d-flex flex-column">
+        <span class="label">Name</span>
+        <span>{{ report.firstName }} {{ report.lastName }}</span>
+      </div>
+      <div class="d-flex flex-column">
+        <span class="label">Date</span>
+        <span>{{ report.date }} </span>
+      </div>
+      <div class="d-flex flex-column">
+        <span class="label">Start Time</span>
+        <span>{{ report.startTime || "-" }}</span>
+      </div>
+      <div class="d-flex flex-column">
+        <span class="label">End Time</span>
+        <span>{{ report.endTime || "-" }}</span>
+      </div>
+      <div class="d-flex flex-row">
+        <button
+          class="approve button"
+          (click)="updateReportStatus(report, 'approve')"
+        >
+          Approve
+        </button>
+        <button
+          class="reject button"
+          (click)="updateReportStatus(report, 'reject')"
+        >
+          Reject
+        </button>
+      </div>
+    </li>
+    } @empty { }
+  </ul>
+</div>
+}@else{
+<ng-container> </ng-container>}

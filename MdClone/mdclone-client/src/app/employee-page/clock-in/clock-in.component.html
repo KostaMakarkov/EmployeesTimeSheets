@@ -1,0 +1,28 @@
+<div class="p-5">
+  <div>
+    <label for="date">Select clock in date: </label>
+    <input
+      type="date"
+      name="date"
+      id="date"
+      (change)="onDateChange($event)"
+    />
+    <input
+      type="time"
+      name="time"
+      id="time"
+      (change)="onTimeChange($event)"
+    />
+  </div>
+
+  <div class="d-flex justify-content-between mt-5">
+    <button
+    [disabled]="!(!!selectedReport.date && !!selectedReport.startTime)"
+      class="action-button"
+      (click)="saveClockIn()"
+    >
+      Save
+    </button>
+    <button class="action-button" (click)="closeDialog()">Cancel</button>
+  </div>
+</div>

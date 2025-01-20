@@ -1,0 +1,20 @@
+.details-container {
+  border: 1px solid black;
+  border-radius: 5px;
+    width: 75vw;
+  .details {
+    width: auto;
+    .label {
+      font-weight: 600;
+    }
+  }
+
+  .clock-button{
+    width: 150px;
+    height: 45px;
+    color:white;
+    background-color: lightgrey;
+    border: 0;
+    border-radius: 5px;
+  }
+}

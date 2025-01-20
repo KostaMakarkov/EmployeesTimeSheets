@@ -1,0 +1,13 @@
+<div class="d-flex">
+    @for (employee of employees; track employee._id) {
+        <button (click)="setEmployee(employee)"> {{ employee.firstName }}</button>
+       } @empty {
+         Empty list of employees
+       }
+</div>
+<div
+  class="container d-flex align-items-center justify-content-center m-auto flex-column"
+>
+
+  <app-employee-details />
+</div>
