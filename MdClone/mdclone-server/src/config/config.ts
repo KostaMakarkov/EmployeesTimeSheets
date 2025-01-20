@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 
-dotenv.config({ path: "./environments/.env" });
+dotenv.config({ path: "./.env" });
 
 interface Config {
   env: string;
